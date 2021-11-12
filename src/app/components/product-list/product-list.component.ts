@@ -99,13 +99,11 @@ export class ProductListComponent implements OnInit {
    this.productService.getProductListPaginate(this.thePageNumber - 1,
     this.thePageSize,
     this.currentCategoryId).
-    subscribe( this.processResult())
+    subscribe(this.processResult())
 
   }
 
   processResult() {
-   
-    
       return data => {
       this.products = data._embedded.products;
       this.thePageNumber = data.page.number + 1;
